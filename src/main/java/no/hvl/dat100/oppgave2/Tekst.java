@@ -30,7 +30,7 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		return "TEKST\n" + super.getId() + "\n" + super.getBruker() + "\n" + super.getDato() + "\n" + super.getLikes() + "\n" + tekst + "\n";
+		return "TEKST\n" + super.toString() + tekst + "\n";
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
