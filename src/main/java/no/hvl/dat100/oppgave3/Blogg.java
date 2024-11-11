@@ -29,20 +29,19 @@ public class Blogg {
 
 	public int finnInnlegg(Innlegg innlegg) {
 		for (int i = 0; i < nesteledig; i++)
-			if (innleggtabell[i].getId() == innlegg.getId())
+			if (innleggtabell[i].erLik(innlegg))
 				return i;
 		return -1;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		for (int i = 0; i < nesteledig; i++)
-			if (innleggtabell[i].getId() == innlegg.getId())
+			if (finnInnlegg(innlegg) != -1)
 				return true;
 		return false;
 	}
 
 	public boolean ledigPlass() {
-		return (nesteledig < innleggtabell.length) ? true : false;
+		return nesteledig < innleggtabell.length;
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
